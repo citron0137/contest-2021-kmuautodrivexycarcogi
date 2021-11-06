@@ -1,0 +1,12 @@
+<launch>
+
+  <!-- 카메라 -->
+  <!-- lidar node (라이다)-->
+  <include file="$(find xycar_lidar)/launch/lidar_noviewer.launch" />
+
+  <!-- ultrasonic node (초음파)-->
+  <include file="$(find xycar_ultrasonic)/launch/xycar_ultrasonic_noviewer.launch" />
+  
+  <node pkg="cogi_drive" type="scanDistance.py" name="cogi_scan_distance" output="screen"/>
+
+</launch>
